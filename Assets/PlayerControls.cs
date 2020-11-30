@@ -131,116 +131,172 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""PlayMusic"",
+            ""id"": ""ff7fb08e-b75d-4e5f-bd16-965ca2490abf"",
+            ""actions"": [
+                {
+                    ""name"": ""Prev"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4db03d3-a05d-412f-b55f-5ed814848625"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 },
                 {
-                    ""name"": ""ArrowKeys"",
-                    ""id"": ""36c86c79-a5f8-437b-918a-f70cd8af967b"",
-                    ""path"": ""2DVector"",
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""6bdc87ad-0115-456a-bab3-17df9356a93b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""VolUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""2c2132a2-73b6-4fff-8120-c9e7c2708e3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""VolDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3062f06-ba38-4071-adf8-acdfdd08bcdc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PlayPause"",
+                    ""type"": ""Button"",
+                    ""id"": ""43c64c74-3339-407b-a967-3f000bb583e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShuffleOnOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""f127571a-1cac-4315-bb72-45b98d88cb09"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""83ff70d6-5b5c-4973-b69b-fd1e06106e03"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
+                    ""action"": ""Prev"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""007e005f-55fc-4131-8226-992e2a291f7d"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""f6ecc8ee-0afd-4e3a-ba88-989137f8eb37"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""47644295-303f-42c1-9557-c28e2cf50e7e"",
+                    ""name"": """",
+                    ""id"": ""51f42958-6c1e-4bd4-ab05-eb9d6dc36571"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Prev"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""2475eedc-15c4-4f2c-865f-d6cb918f3a01"",
+                    ""name"": """",
+                    ""id"": ""b7c28e6d-68dc-4534-9b1f-6af96b0bfc3d"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6574f4b5-b8c8-4379-9b81-0423ccf28b13"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Next"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Dpad"",
-                    ""id"": ""85458019-8b51-4abb-89cd-d77ea45fe31c"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""28699f11-af4e-45d7-b37b-35234ff3ae6a"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""name"": """",
+                    ""id"": ""d8330f72-557e-4229-adaf-1107b5264f38"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""VolUp"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""4cb0aa90-3ea5-43b5-94bd-2f5738a95fe6"",
-                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""name"": """",
+                    ""id"": ""ae3e15d3-6de8-429b-8ba0-9aba87bd3549"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""VolUp"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""6ed03d81-6d9d-411d-aa41-af4d3d8e9891"",
-                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""name"": """",
+                    ""id"": ""ec412568-8273-4887-8fc0-69b822af58c1"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""VolDown"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""0083bb9c-0a0a-46fe-99f9-b49be2b78ebb"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""name"": """",
+                    ""id"": ""c30133cc-b1cf-45ad-b593-46e5b6f9f2c4"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""VolDown"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c297944-3904-4a9b-871c-39caf3f3552f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdd275e0-bc2b-42fe-9b32-a178af8e7ab9"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShuffleOnOff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -253,6 +309,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // WalkAround
         m_WalkAround = asset.FindActionMap("WalkAround", throwIfNotFound: true);
         m_WalkAround_Movement = m_WalkAround.FindAction("Movement", throwIfNotFound: true);
+        // PlayMusic
+        m_PlayMusic = asset.FindActionMap("PlayMusic", throwIfNotFound: true);
+        m_PlayMusic_Prev = m_PlayMusic.FindAction("Prev", throwIfNotFound: true);
+        m_PlayMusic_Next = m_PlayMusic.FindAction("Next", throwIfNotFound: true);
+        m_PlayMusic_VolUp = m_PlayMusic.FindAction("VolUp", throwIfNotFound: true);
+        m_PlayMusic_VolDown = m_PlayMusic.FindAction("VolDown", throwIfNotFound: true);
+        m_PlayMusic_PlayPause = m_PlayMusic.FindAction("PlayPause", throwIfNotFound: true);
+        m_PlayMusic_ShuffleOnOff = m_PlayMusic.FindAction("ShuffleOnOff", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -364,6 +428,79 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public WalkAroundActions @WalkAround => new WalkAroundActions(this);
+
+    // PlayMusic
+    private readonly InputActionMap m_PlayMusic;
+    private IPlayMusicActions m_PlayMusicActionsCallbackInterface;
+    private readonly InputAction m_PlayMusic_Prev;
+    private readonly InputAction m_PlayMusic_Next;
+    private readonly InputAction m_PlayMusic_VolUp;
+    private readonly InputAction m_PlayMusic_VolDown;
+    private readonly InputAction m_PlayMusic_PlayPause;
+    private readonly InputAction m_PlayMusic_ShuffleOnOff;
+    public struct PlayMusicActions
+    {
+        private @PlayerControls m_Wrapper;
+        public PlayMusicActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Prev => m_Wrapper.m_PlayMusic_Prev;
+        public InputAction @Next => m_Wrapper.m_PlayMusic_Next;
+        public InputAction @VolUp => m_Wrapper.m_PlayMusic_VolUp;
+        public InputAction @VolDown => m_Wrapper.m_PlayMusic_VolDown;
+        public InputAction @PlayPause => m_Wrapper.m_PlayMusic_PlayPause;
+        public InputAction @ShuffleOnOff => m_Wrapper.m_PlayMusic_ShuffleOnOff;
+        public InputActionMap Get() { return m_Wrapper.m_PlayMusic; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayMusicActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayMusicActions instance)
+        {
+            if (m_Wrapper.m_PlayMusicActionsCallbackInterface != null)
+            {
+                @Prev.started -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnPrev;
+                @Prev.performed -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnPrev;
+                @Prev.canceled -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnPrev;
+                @Next.started -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnNext;
+                @Next.performed -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnNext;
+                @Next.canceled -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnNext;
+                @VolUp.started -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnVolUp;
+                @VolUp.performed -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnVolUp;
+                @VolUp.canceled -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnVolUp;
+                @VolDown.started -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnVolDown;
+                @VolDown.performed -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnVolDown;
+                @VolDown.canceled -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnVolDown;
+                @PlayPause.started -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnPlayPause;
+                @PlayPause.performed -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnPlayPause;
+                @PlayPause.canceled -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnPlayPause;
+                @ShuffleOnOff.started -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnShuffleOnOff;
+                @ShuffleOnOff.performed -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnShuffleOnOff;
+                @ShuffleOnOff.canceled -= m_Wrapper.m_PlayMusicActionsCallbackInterface.OnShuffleOnOff;
+            }
+            m_Wrapper.m_PlayMusicActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Prev.started += instance.OnPrev;
+                @Prev.performed += instance.OnPrev;
+                @Prev.canceled += instance.OnPrev;
+                @Next.started += instance.OnNext;
+                @Next.performed += instance.OnNext;
+                @Next.canceled += instance.OnNext;
+                @VolUp.started += instance.OnVolUp;
+                @VolUp.performed += instance.OnVolUp;
+                @VolUp.canceled += instance.OnVolUp;
+                @VolDown.started += instance.OnVolDown;
+                @VolDown.performed += instance.OnVolDown;
+                @VolDown.canceled += instance.OnVolDown;
+                @PlayPause.started += instance.OnPlayPause;
+                @PlayPause.performed += instance.OnPlayPause;
+                @PlayPause.canceled += instance.OnPlayPause;
+                @ShuffleOnOff.started += instance.OnShuffleOnOff;
+                @ShuffleOnOff.performed += instance.OnShuffleOnOff;
+                @ShuffleOnOff.canceled += instance.OnShuffleOnOff;
+            }
+        }
+    }
+    public PlayMusicActions @PlayMusic => new PlayMusicActions(this);
     public interface ILookAroundActions
     {
         void OnRotation(InputAction.CallbackContext context);
@@ -371,5 +508,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IWalkAroundActions
     {
         void OnMovement(InputAction.CallbackContext context);
+    }
+    public interface IPlayMusicActions
+    {
+        void OnPrev(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
+        void OnVolUp(InputAction.CallbackContext context);
+        void OnVolDown(InputAction.CallbackContext context);
+        void OnPlayPause(InputAction.CallbackContext context);
+        void OnShuffleOnOff(InputAction.CallbackContext context);
     }
 }

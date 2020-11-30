@@ -18,6 +18,16 @@ public class Movement : MonoBehaviour
     public LayerMask groundLayer;
     public bool grounded;
 
+    //Head-bobbing
+    public Camera _camera;
+    private Vector3 _cameraOrigin;
+    private float movementCounter;
+    private float idleCounter;
+    private Vector3 targetBobPosition;
+
+    //Audio
+    AudioSource footsteps;
+
     void Awake()
     {
         controls = new PlayerControls();
@@ -34,6 +44,10 @@ public class Movement : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         groundCheck = transform.Find("GroundCheck");
+
+        _cameraOrigin = _camera.transform.localPosition;
+
+        footsteps = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,5 +67,30 @@ public class Movement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         _characterController.Move(velocity * Time.deltaTime);
+
+        //Headbob
+        if(x == 0 && z == 0)
+        {
+            HeadBob(idleCounter, 0.1f, 0.1f);
+            idleCounter += Time.deltaTime;
+            _camera.transform.localPosition = Vector3.Lerp(_camera.transform.localPosition, targetBobPosition, Time.deltaTime * 2);
+            
+            if(footsteps.isPlaying)
+                footsteps.Stop();
+        }
+        else
+        {
+            HeadBob(movementCounter, 0.6f, 0.3f);
+            movementCounter += Time.deltaTime * 4.5f;
+            _camera.transform.localPosition = Vector3.Lerp(_camera.transform.localPosition, targetBobPosition, Time.deltaTime * 6);
+
+            if(!footsteps.isPlaying) 
+                footsteps.Play();
+        }
+    }
+
+    void HeadBob(float p_z, float p_x_intensity, float p_y_intensity)
+    {
+        targetBobPosition = _cameraOrigin + new Vector3(Mathf.Cos(p_z) * p_x_intensity, Mathf.Sin(p_z * 2) * p_y_intensity, 0);
     }
 }

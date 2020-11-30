@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 691929800420451991}
   - component: {fileID: 3350340800889328221}
   - component: {fileID: 4161141977217330553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform_MTAsubway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
