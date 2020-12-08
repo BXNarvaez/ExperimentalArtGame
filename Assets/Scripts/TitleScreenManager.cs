@@ -14,12 +14,7 @@ public class TitleScreenManager : MonoBehaviour
     //Title Screen Buttons
     public void GameStart()
     {
-        _transitionManager.NextScene("Whitebox");
-    }
-
-    public void Tutorial()
-    {
-        _transitionManager.NextScene("Tutorial");
+        _transitionManager.NextScene("TrainStation");
     }
 
     public void QuitGame()
