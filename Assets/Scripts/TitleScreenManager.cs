@@ -21,4 +21,12 @@ public class TitleScreenManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            _transitionManager.NextScene("TitleScreen");
+        }
+    }
 }

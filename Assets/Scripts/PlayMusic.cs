@@ -11,9 +11,17 @@ public class PlayMusic : MonoBehaviour
     public AudioClip[] songs;
     public int currentSong;
     public AudioSource musicPlayer;
-    
+    string status;
+
+    //Interface
     public GameObject musicInterface;
     public Button[] buttons;
+    public Button playPause;
+    public Image ppImage;
+    public Sprite[] icons;
+    public Slider songLength;
+    public Text songName;
+    
 
     void Awake()
     {
@@ -34,12 +42,27 @@ public class PlayMusic : MonoBehaviour
     {
         musicInterface = GameObject.Find("MusicInterface");
         buttons = musicInterface.transform.GetComponentsInChildren<Button>();
-
         musicPlayer = GameObject.Find("Headphones").GetComponent<AudioSource>();
+        
+        status = "Playing";
             
         currentSong = 0;
         musicPlayer.clip = songs[currentSong];
         musicPlayer.Play();
+    }
+
+    void LateUpdate()
+    {   
+        songName.text = "Track " + (currentSong + 1);
+        if(musicPlayer.isPlaying)
+        {
+            songLength.value += Time.deltaTime;
+        }
+
+        songLength.maxValue = musicPlayer.clip.length;
+
+        if(!musicPlayer.isPlaying)
+            OnSongEnd(status);
     }
 
     void PressButton(int i)
@@ -50,6 +73,7 @@ public class PlayMusic : MonoBehaviour
 
     public void Prev()
     {
+        songLength.value = 0;
         if(currentSong > 0)
             currentSong--;
         else if(currentSong == 0)
@@ -62,6 +86,7 @@ public class PlayMusic : MonoBehaviour
     }
     public void Next()
     {
+        songLength.value = 0;
         if(currentSong < songs.Length - 1)
             currentSong++;
         else if(currentSong == songs.Length - 1)
@@ -83,9 +108,28 @@ public class PlayMusic : MonoBehaviour
 
     public void PlayPause()
     {
+        var eventSystem = EventSystem.current;
+        ExecuteEvents.Execute(playPause.gameObject, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+        
         if(musicPlayer.isPlaying)
+        {
+            status = "Paused";
             musicPlayer.Pause();
+            ppImage.sprite = icons[0];
+        }
         else
+        {
+            status = "Playing";
             musicPlayer.UnPause();
+            ppImage.sprite = icons[1];
+        }
+    }
+
+    public void OnSongEnd(string _status)
+    {
+        if(!musicPlayer.isPlaying && _status == "Playing")
+            Next();
+        else
+            return;
     }
 }
