@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
 
     //Gravity
     public float gravity = -9.81f;
-    Vector3 velocity;
+    public Vector3 velocity;
     public Transform groundCheck;
     public float groundCheckRadius = 0.4f;
     public LayerMask groundLayer;
@@ -43,6 +43,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        _characterController.detectCollisions = true;
         groundCheck = transform.Find("GroundCheck");
 
         _cameraOrigin = _camera.transform.localPosition;
@@ -71,7 +72,7 @@ public class Movement : MonoBehaviour
         //Headbob
         if(x == 0 && z == 0)
         {
-            HeadBob(idleCounter, 0.1f, 0.1f);
+            HeadBob(idleCounter, 0.01f, 0.01f);
             idleCounter += Time.deltaTime;
             _camera.transform.localPosition = Vector3.Lerp(_camera.transform.localPosition, targetBobPosition, Time.deltaTime * 2);
             
@@ -80,7 +81,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            HeadBob(movementCounter, 0.6f, 0.3f);
+            HeadBob(movementCounter, 0.06f, 0.03f);
             movementCounter += Time.deltaTime * 4.5f;
             _camera.transform.localPosition = Vector3.Lerp(_camera.transform.localPosition, targetBobPosition, Time.deltaTime * 6);
 
@@ -92,5 +93,21 @@ public class Movement : MonoBehaviour
     void HeadBob(float p_z, float p_x_intensity, float p_y_intensity)
     {
         targetBobPosition = _cameraOrigin + new Vector3(Mathf.Cos(p_z) * p_x_intensity, Mathf.Sin(p_z * 2) * p_y_intensity, 0);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            Debug.Log("hit");
+            transform.parent = collision.transform;
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            transform.parent = null;
+        }
     }
 }

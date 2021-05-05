@@ -15,7 +15,7 @@ public class LookAround : MonoBehaviour
     {
         controls = new PlayerControls();
         controls.LookAround.Rotation.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.LookAround.Rotation.canceled += ctx => move = Vector2.zero;    
+        controls.LookAround.Rotation.canceled += ctx => move = Vector2.zero;
     }
 
     void OnEnable()
@@ -25,14 +25,13 @@ public class LookAround : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         playerBody = transform.parent;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         float mouseX = move.x * mouseSensitivity * Time.deltaTime;
         float mouseY = move.y * mouseSensitivity * Time.deltaTime;
 

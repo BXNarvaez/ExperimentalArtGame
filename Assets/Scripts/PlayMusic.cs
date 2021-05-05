@@ -44,6 +44,13 @@ public class PlayMusic : MonoBehaviour
         buttons = musicInterface.transform.GetComponentsInChildren<Button>();
         musicPlayer = GameObject.Find("Headphones").GetComponent<AudioSource>();
         
+        if(GlobalVariables.SharedInstance.mode != GlobalVariables.controllerMode.Gamepad)
+        {
+            musicInterface.SetActive(false);
+            playPause.gameObject.SetActive(false);
+            this.enabled = false;
+        }
+
         status = "Playing";
             
         currentSong = 0;
